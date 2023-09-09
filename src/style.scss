@@ -30,18 +30,57 @@ button {
 }
 
 body {
-  min-height: 100vh;
-  min-width: 100vw;
   background-color: darkgray;
   font-family: var(--font-sans);
 }
 
+// Source: https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034
+.so, /* Shortcut class */
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+.sof:focus,
+.sof:active,
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+
+p.sr-only {
+  background-color: var(--gray-1);
+}
+
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .browser {
-  position: absolute;
-  inset: 50% 50%;
-  transform: translate(-50%, -50%);
   width: 90%;
   aspect-ratio: 16/9;
+  max-height: 100dvh;
   background-color: var(--gray-10);
   color: white;
   border-radius: 10px;

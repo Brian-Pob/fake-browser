@@ -32,10 +32,104 @@
       content="Recreation of Google Chrome UI using HTML and SCSS. Featuring Phosphor Icons, Open Props, and Vite."
     />
     <meta name="twitter:image" content="/og-banner.png" />
+    <link rel="stylesheet" href="src/style.scss" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <main>
+      <p class="sr-only sr-only-focusable" tabindex="1">
+        This is a recreation of the Google Chrome UI using HTML and SCSS. The
+        following HTML may not have correct semantic properties.
+      </p>
+      <div class="browser">
+        <div class="header-bar">
+          <div class="header-bar__top">
+            <ul class="window-btns">
+              <li>
+                <button><p class="sr-only">Close Window</p></button>
+              </li>
+              <li>
+                <button><p class="sr-only">Minimize Window</p></button>
+              </li>
+              <li>
+                <button><p class="sr-only">Maximize Window</p></button>
+              </li>
+            </ul>
+            <ul class="tabs">
+              <li>
+                New Tab
+                <button class="close-tab-btn">
+                  <i class="ph ph-x"><span class="sr-only">close tab</span></i>
+                </button>
+              </li>
+            </ul>
+            <button class="new-tab-btn">
+              <i class="ph ph-plus">
+                <span class="so">new tab</span>
+              </i>
+            </button>
+          </div>
+          <div class="header-bar__bottom">
+            <ul class="nav-btns">
+              <li>
+                <button>
+                  <i class="ph ph-arrow-left"
+                    ><span class="so">browser back</span></i
+                  >
+                </button>
+              </li>
+              <li>
+                <button>
+                  <i class="ph ph-arrow-right"
+                    ><span class="so">browser forward</span></i
+                  >
+                </button>
+              </li>
+              <li>
+                <button>
+                  <i class="ph ph-arrow-counter-clockwise"
+                    ><span class="so">browser refresh</span></i
+                  >
+                </button>
+              </li>
+              <li>
+                <button>
+                  <i class="ph ph-house"
+                    ><span class="so">browser home</span></i
+                  >
+                </button>
+              </li>
+            </ul>
+            <div class="omni-bar">
+              <form action="#">
+                <label for="urlbar" class="so">url bar</label>
+                <button class="lock">
+                  <i class="ph ph-lock-key"
+                    ><span class="so">https active</span></i
+                  >
+                </button>
+                <input type="text" class="url-bar" name="urlbar" id="urlbar" />
+              </form>
+            </div>
+            <button class="menu-btn">
+              <span>
+                <i class="ph ph-dots-three-vertical">
+                  <span class="so">browser menu</span>
+                </i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div class="viewport">
+          <h1>Fake Browser</h1>
+          <p>(please view on desktop or landscape)</p>
+          <p>
+            Icons by <a href="https://phosphoricons.com/">Phosphor Icons</a>
+          </p>
+          <p>Styles from <a href="https://open-props.style">Open Props</a></p>
+        </div>
+      </div>
+
+      <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </main>
   </body>
 </html>
